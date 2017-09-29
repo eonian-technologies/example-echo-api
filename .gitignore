@@ -1,0 +1,8 @@
+./. 
+target/
+nb-configuration.xml
+nbactions.xml
+pom.xml.versionsBackup
+/nbproject/
+rebel.xml
+src/main/webapp/META-INF/context.xml
