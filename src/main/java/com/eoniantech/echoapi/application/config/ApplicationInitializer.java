@@ -54,11 +54,8 @@ public class ApplicationInitializer implements WebApplicationInitializer {
             throws ServletException {
 
         // Ensure the envionment is set
-        if (System.getProperty(
-                ENVIRONMENT_PROPERTY) == null) {
-            
-            throw new IllegalStateException(
-                    MISSING_ENVIRONMENT_PROPERTY);
+        if (System.getProperty(ENVIRONMENT_PROPERTY) == null) { 
+            throw new IllegalStateException(MISSING_ENVIRONMENT_PROPERTY);
         }
 
         // Create the Spring context.
@@ -68,9 +65,9 @@ public class ApplicationInitializer implements WebApplicationInitializer {
         // Activate the apporpriate profile
         springContext
                 .getEnvironment()
-                        .setActiveProfiles(
-                                System.getProperty(
-                                        ENVIRONMENT_PROPERTY));
+                .setActiveProfiles(
+                        System.getProperty(
+                                ENVIRONMENT_PROPERTY));
 
         // Specify the spring configuration entry point.  
         springContext
