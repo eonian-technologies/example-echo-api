@@ -17,7 +17,7 @@
     <artifactId>example-echo-api</artifactId>
     <version>1.0</version>
     <packaging>war</packaging> 
-    <name>Eonian Tech: Example Echo API</name>
+    <name>Eonian Example Echo API</name>
     <description>Simple HTTP API implemented with Domain-driven Design, Hexagonal Architecture, Spring, and Jersey. Messages sent in the request are echoed back in the response.</description>
 
     <properties>

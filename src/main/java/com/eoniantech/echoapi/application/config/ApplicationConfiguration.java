@@ -54,8 +54,7 @@ public class ApplicationConfiguration {
 
     @Bean
     @Profile("!test")
-    public static PropertySourcesPlaceholderConfigurer pspc() 
-            throws IOException {
+    public static PropertySourcesPlaceholderConfigurer pspc() {
 
         PropertySourcesPlaceholderConfigurer pspc
                 = new PropertySourcesPlaceholderConfigurer();
