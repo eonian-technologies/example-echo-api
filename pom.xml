@@ -14,7 +14,7 @@
 
     <groupId>com.eoniantech.examples</groupId>
     <artifactId>example-echo-api</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.1</version>
     <packaging>war</packaging> 
     <name>Eonian Example Echo API</name>
 
