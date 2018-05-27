@@ -7,25 +7,46 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.eoniantech.examples</groupId>
-        <artifactId>example-war-parent-pom</artifactId>
-        <version>1.0</version>
-        <relativePath>../parent-pom/war-parent-pom/pom.xml</relativePath>
+        <groupId>com.eoniantech.build</groupId>
+        <artifactId>war-parent-pom</artifactId>
+        <version>1.4</version>
     </parent>
 
     <groupId>com.eoniantech.examples</groupId>
     <artifactId>example-echo-api</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <packaging>war</packaging> 
     <name>Eonian Example Echo API</name>
-    <description>Simple HTTP API implemented with Domain-driven Design, Hexagonal Architecture, Spring, and Jersey. Messages sent in the request are echoed back in the response.</description>
+
+    <description>
+        Simple HTTP API implemented with Domain-driven Design, 
+        Hexagonal Architecture, Spring, and Jersey. Messages 
+        sent in the request are echoed back in the response.
+    </description>
 
     <properties>
-        <itServerPort>8180</itServerPort>
-        <itServerAjpPort>8110</itServerAjpPort>
-        <itServerDumpPort>6301</itServerDumpPort>
-        <itApplicationContext>/echo</itApplicationContext>
+        <itServerContext>/echo</itServerContext>
+        <appJvmArgs>-Dcom.eonian.env=local</appJvmArgs>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>5.0.6.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey</groupId>
+                <artifactId>jersey-bom</artifactId>
+                <version>2.27</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <!-- Logging -->
@@ -77,6 +98,7 @@
         <dependency>
             <groupId>javax.ws.rs</groupId> 
             <artifactId>javax.ws.rs-api</artifactId>
+            <version>2.1</version>
         </dependency>
 
         <!-- Javax Providers -->
@@ -105,6 +127,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+            <version>4.12</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -116,11 +139,13 @@
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
             <scope>test</scope>
+            <version>2.18.3</version>
         </dependency> 
         <dependency>
             <groupId>com.googlecode.junit-toolbox</groupId>
             <artifactId>junit-toolbox</artifactId>
             <scope>test</scope>
+            <version>2.4</version>
             <exclusions>
                 <exclusion>
                     <groupId>commons-logging</groupId>

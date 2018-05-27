@@ -33,20 +33,20 @@ import org.springframework.web.servlet.DispatcherServlet;
  * replace the {@code web.xml} file. If a {@code web.xml} file exists, those
  * definitions will be processed first, followed by Servlet Spec 3 annotated
  * classes, and then any definitions defined here.
- *
- * @author Michael Andrews <Michael.Andrews@eoniantech.com>
+ * 
+ * @author Michael Andrews | Michael.Andrews@eoniantech.com
  * @since 1.0
  */
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class ApplicationInitializer implements WebApplicationInitializer {
 
     public static final String ENVIRONMENT_PROPERTY 
-            = "com.myco.env";
+            = "com.eonian.env";
 
     private static final String MISSING_ENVIRONMENT_PROPERTY
             = "You must provide the environment name via the "
-            + "com.myco.env JVM argument. E.g, "
-            + "-Dcom.myco.env=local|dev|stage|prod";
+            + "com.eonian.env JVM argument. E.g, "
+            + "-Dcom.eonian.env=local|dev|stage|prod";
 
     @Override
     public void onStartup(
@@ -77,13 +77,7 @@ public class ApplicationInitializer implements WebApplicationInitializer {
         // Register the context listener
         context.addListener(new ContextLoaderListener(springContext));
 
-        // Add Spring MVC
-        ServletRegistration.Dynamic mvcServlet
-                = context.addServlet("SpringMvc", 
-                        new DispatcherServlet(springContext));
-        mvcServlet.addMapping("/");
-
-        // Add the REST API Servlet, set the mapping and init params.
+        // Add the REST API Servlet, set the mapping, abnd set init params.
         ServletRegistration.Dynamic restServlet
                 = context.addServlet("api",
                         ServletContainer.class.getName());
@@ -94,6 +88,16 @@ public class ApplicationInitializer implements WebApplicationInitializer {
                 .setInitParameter(
                         "javax.ws.rs.Application",
                         RestConfiguration.class.getName()); 
+
+        // Add Spring MVC
+        ServletRegistration.Dynamic mvcServlet
+                = context.addServlet(
+                        "SpringMvc",
+                        new DispatcherServlet(
+                                springContext)); 
+        mvcServlet
+                .addMapping("/");
+
 
         // Add the UTF8 CharacterEncodingFilter
         FilterRegistration.Dynamic characterEncodingFilter

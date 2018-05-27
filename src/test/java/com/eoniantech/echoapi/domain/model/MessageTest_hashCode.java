@@ -22,7 +22,7 @@ import org.junit.Test;
 /**
  * Test class for the {@link Message} model's hashCode method.
  * 
- * @author Michael Andrews <Michael.Andrews@eoniantech.com>
+ * @author Michael Andrews | Michael.Andrews@eoniantech.com
  * @since 1.0
  */
 public class MessageTest_hashCode {

@@ -26,7 +26,7 @@ import javax.ws.rs.core.MediaType;
 /**
  * REST Resource.
  * 
- * @author Michael Andrews <Michael.Andrews@eoniantech.com>
+ * @author Michael Andrews | Michael.Andrews@eoniantech.com
  * @since 1.0
  */
 @Path("/echo-message")

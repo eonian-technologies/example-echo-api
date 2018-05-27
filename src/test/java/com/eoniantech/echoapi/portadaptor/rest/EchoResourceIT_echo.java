@@ -27,13 +27,13 @@ import org.junit.Test;
 /**
  * Test class for the EchoResource's echo endpoint.
  * 
- * @author Michael Andrews <Michael.Andrews@eoniantech.com>
+ * @author Michael Andrews | Michael.Andrews@eoniantech.com
  * @since 1.0
  */
 public class EchoResourceIT_echo {
 
     private static final String URL 
-            = "http://localhost:8180/echo/api/";
+            = "http://localhost:8080/echo/api/";
 
     private static Client httpClient;
 
