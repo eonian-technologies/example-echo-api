@@ -24,7 +24,7 @@ import static org.glassfish.jersey.server.ServerProperties.MONITORING_STATISTICS
 /**
  * REST Configuration.
  * 
- * @author Michael Andrews <Michael.Andrews@eoniantech.com>
+ * @author Michael Andrews | Michael.Andrews@eoniantech.com
  * @since 1.0
  */
 @ApplicationPath("api")
@@ -32,6 +32,7 @@ public class RestConfiguration extends ResourceConfig {
 
     private static final String NAME = "echo-api";
 
+    @SuppressWarnings("OverridableMethodCallInConstructor")
     public RestConfiguration() {
 
         property(

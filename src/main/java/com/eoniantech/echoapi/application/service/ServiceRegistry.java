@@ -22,7 +22,7 @@ import org.springframework.context.ApplicationContextAware;
  * Spring-backed Application Registry containing beans that are in the 
  * Application layer.
  *
- * @author Michael Andrews <Michael.Andrews@eoniantech.com>
+ * @author Michael Andrews | Michael.Andrews@eoniantech.com
  * @since 1.0
  */
 public class ServiceRegistry implements ApplicationContextAware {

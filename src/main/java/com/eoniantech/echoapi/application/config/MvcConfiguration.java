@@ -22,13 +22,14 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.PropertiesFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 /**
@@ -37,17 +38,17 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  * {@code portadaptor/web} package annotated with the {@link Controller} 
  * annotation. It will not component scan for any other Spring stereotypes.
  * 
- * @author Michael Andrews <Michael.Andrews@eoniantech.com>
+ * @author Michael Andrews | Michael.Andrews@eoniantech.com
  * @since 1.0
  */
 @Configuration
 @EnableWebMvc
 @ComponentScan(
-        basePackages = "com.myco.echoapi.portadaptor.web",
+        basePackages = "com.eoniantech.echoapi.portadaptor.web",
         useDefaultFilters = false,
         includeFilters = {
-            @ComponentScan.Filter(Controller.class)})
-public class MvcConfiguration extends WebMvcConfigurerAdapter {
+            @Filter(Controller.class)})
+public class MvcConfiguration implements WebMvcConfigurer {
 
     private final static String CSS_PATH = "/WEB-INF/statics/css/";
     private final static String JS_PATH = "/WEB-INF/statics/js/";

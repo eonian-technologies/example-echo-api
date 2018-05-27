@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 /**
  * MVC controller for the index page.
  * 
- * @author Michael Andrews <Michael.Andrews@eoniantech.com>
+ * @author Michael Andrews | Michael.Andrews@eoniantech.com
  * @since 1.0
  */
 @Controller

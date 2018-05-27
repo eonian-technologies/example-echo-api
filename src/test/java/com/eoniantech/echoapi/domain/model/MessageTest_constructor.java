@@ -15,6 +15,7 @@
  */
 package com.eoniantech.echoapi.domain.model;
 
+import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
 
 /**

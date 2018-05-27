@@ -17,7 +17,6 @@ package com.eoniantech.echoapi.application.config;
 
 import com.eoniantech.echoapi.application.service.EchoService;
 import com.eoniantech.echoapi.application.service.ServiceRegistry;
-import java.io.IOException;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;
@@ -32,12 +31,12 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
  * this package with the {@link Configuration} annotation. It will not 
  * component scan for any other Spring stereotypes.
  *
- * @author Michael Andrews <Michael.Andrews@eoniantech.com>
+ * @author Michael Andrews | Michael.Andrews@eoniantech.com
  * @since 1.0
  */
 @Configuration
 @ComponentScan(
-        basePackages = "com.myco.echoapi.application.config",
+        basePackages = "com.eoniantech.echoapi.application.config",
         useDefaultFilters = false,
         includeFilters = {
             @Filter(Configuration.class)

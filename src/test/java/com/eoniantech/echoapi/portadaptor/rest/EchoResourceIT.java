@@ -21,7 +21,7 @@ import org.junit.runner.RunWith;
 /**
  * Integration Test suite for the {@link Message} EchoResource.
  * 
- * @author Michael Andrews <Michael.Andrews@eoniantech.com>
+ * @author Michael Andrews | Michael.Andrews@eoniantech.com
  * @since 1.0
  */
 @RunWith(WildcardPatternSuite.class)
